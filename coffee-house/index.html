@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
@@ -38,7 +43,7 @@
       </div>
       <div class="header-bottom">
         <div class="header-bottom__box">
-          <div class="header-bottom__title">Enjoy premium coffee at our charming cafe</div>
+          <h1 class="header-bottom__title">Enjoy premium coffee at our charming cafe</h1>
           <p class="header-bottom__text">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee
           lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
           <button class="header-bottom__btn">Menu</button>
@@ -46,6 +51,80 @@
       </div>
     </div>
   </header>
-
+  <section class="slider">
+    <div class="container">
+      <h2 class="slider-title">Choose your <span>favorite</span> coffee</h2>
+      <div class="slider-wramper">
+        <div class="slider-dots">
+          <input class="slider-dots__input" type="radio" name="slider" id="sldier1" checked>
+          <label class="slider-dots__label" for="slider1">
+            <span></span>
+          </label>
+          <input class="slider-dots__input" type="radio" name="slider" id="sldier2">
+          <label class="slider-dots__label" for="slider2">
+            <span></span>
+          </label>
+          <input class="slider-dots__input" type="radio" name="slider" id="sldier3" checked>
+          <label class="slider-dots__label" for="slider3">
+            <span></span>
+          </label>
+          <div class="slider-box">
+            <button class="arrow arrow-left">
+              <img src="./images/svg/arrow-left.svg" alt="arrow-left">
+            </button>
+            <div class="slider-inner">
+              <div class="slider-item">
+                <img class="slider-item__img" src="./images/slider/coffee-slider-1.png" alt="cap">
+                <div class="slider-descr">
+                  <h3 class="slider-item__title">
+                    S’mores Frappuccino
+                  </h3>
+                  <p class="slider-item__text">
+                    This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.
+                  </p>
+                  <div class="slider-item__price">
+                    $5.50
+                  </div>
+                </div>
+              </div>
+              <div class="slider-item">
+                <img class="slider-item__img" src="./images/slider/coffee-slider-2.png" alt="cap">
+                <div class="slider-descr">
+                  <h3 class="slider-item__title">
+                    Caramel Macchiato
+                  </h3>
+                  <p class="slider-item__text">
+                    Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.
+                  </p>
+                  <div class="slider-item__price">
+                    $5.00
+                  </div>
+                </div>
+              </div>
+              <div class="slider-item">
+                <img class="slider-item__img" src="./images/slider/coffee-slider-3.png" alt="cap">
+                <div class="slider-descr">
+                  <h3 class="slider-item__title">
+                    Ice coffee
+                  </h3>
+                  <p class="slider-item__text">
+                    A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
+                  </p>
+                  <div class="slider-item__price">
+                    $4.50
+                  </div>
+                </div>
+              </div>              
+            </div>
+            <button class="arrow arrow-right">
+              <img src="./images/svg/arrow-left.svg" alt="arrow-right">
+            </button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <script src="./js/index.js"></script>
 </body>
 </html>
