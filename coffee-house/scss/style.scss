@@ -49,7 +49,9 @@ $bg-backdrop: #403F3D;
 $border-dark: #665F55;
 $border-light: #C1B6AD;
 $inter: 'Inter', sans-serif;
-
+html{
+  scroll-behavior: smooth;
+}
 body{
   background: $bg-body;
   font-family: $inter;
@@ -81,6 +83,9 @@ a{
     align-items: center;
     margin-top: 16px;
     margin-bottom: 16px;
+  }
+  &-menu__btn{
+    display: block;
   }
   &-item,
   &-menu__btn{
@@ -447,7 +452,6 @@ a{
       display: flex;
     }
     &__item{
-      padding: 18px;
     }
     &__item + &__item{
       margin-left: 12px;
@@ -535,6 +539,123 @@ a{
     }
     &__work-day::after{
       background: url(../images/svg/clock.svg);
+    }
+  }
+}
+.menu{
+  margin-bottom: 100px;
+  &-offer{
+    @extend %heading-2;
+    font-size: 60px;
+    color: $text-dark;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 800px;
+    & span{
+      @extend %heading-2-accent;
+      color: $text-accent;
+    }
+  }
+  &-tabs{
+    margin-bottom: 40px;
+    &__list{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $border-light;
+      border-radius: 100px;
+      padding: 8px 16px 8px 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      &-text{
+        margin-left: 8px;
+        @extend %link-button;
+        color: $text-dark;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      &:hover{
+        border-color: $bg-container;
+        background-color: $bg-container;
+        color: $text-light;
+        transition: all 0.3s;
+      }
+      &.active{
+        border-color: $bg-container;
+        background-color: $bg-container;
+        color: $text-light;
+      }
+    }
+    &__image{
+      background-color: $border-light;
+      border: 1px solid $border-light;
+      border-radius: 50%;
+      padding: 8px;
+      display: flex;
+      height: fit-content; 
+      &-img{
+        display: block;
+      }
+
+    }
+    &__item + &__item{
+      margin-left: 16px;
+    }
+  }
+  &-grid{
+    margin-bottom: 100px;
+    &__items{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px; 
+      border-radius: 40px;
+    }
+    &__item{
+      @extend %heading-3;
+      border: 1px solid $border-light;
+      border-radius: 40px;
+      width: 310px;   
+      color: $text-dark;
+    }
+    &__wramper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+    &__box{
+      transition: all 0.3s;
+      transform: scale(1.1);
+      &:hover{
+        transform: scale(1);
+        transition: all 0.3s;
+      }
+    }
+    &__img{
+      display: block;
+    }
+    &__descr{
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+    }
+    &__title{
+      margin-bottom: 12px;
+    }
+    &__text{
+      @extend %medium;
+      height: 72px;
+      overflow: hidden;
+    }
+    &__price{
+      margin-bottom: auto;
     }
   }
 }
