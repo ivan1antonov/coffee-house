@@ -8,13 +8,13 @@
   font-style: italic;
 }
 
-.gallery-title, .slider-title {
+.apps-item__title, .gallery-title, .slider-title {
   font-size: 32px;
   font-weight: 600;
   line-height: 125%;
 }
 
-.gallery-title span, .slider-title span {
+.apps-item__title span, .gallery-title span, .slider-title span {
   font-style: italic;
 }
 
@@ -24,13 +24,13 @@
   line-height: 125%;
 }
 
-.slider-item__text, .header-bottom__text {
+.apps-item__text, .slider-item__text, .header-bottom__text {
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
 }
 
-.header-bottom__btn, .header-link {
+.apps-download__btn-text span, .header-bottom__btn, .header-link {
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
@@ -341,4 +341,62 @@ a {
 }
 .gallery__item-min {
   height: 430px;
+}
+
+.apps {
+  margin-bottom: 100px;
+}
+.apps-wramper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.apps-item {
+  max-width: 630px;
+}
+.apps-item__title {
+  font-size: 60px;
+  color: #403F3D;
+  margin-bottom: 40px;
+}
+.apps-item__title span {
+  color: #B0907A;
+}
+.apps-item__text {
+  margin-bottom: 40px;
+}
+.apps-download {
+  display: flex;
+}
+.apps-download__btn {
+  width: 200px;
+  height: 64px;
+  border-radius: 100px;
+  padding: 12px 20px;
+  border: 1px solid #665F55;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  transition: all 0.3s;
+}
+.apps-download__btn svg {
+  margin-right: 2px;
+}
+.apps-download__btn-text {
+  color: #403F3D;
+  font-size: 10px;
+}
+.apps-download__btn-text span {
+  font-size: 16px;
+}
+.apps-download__btn:hover {
+  background: #665F55;
+  transition: all 0.3s;
+}
+.apps-download__btn:hover p {
+  color: #E1D4C9;
+}
+.apps-download__btn:hover svg path {
+  fill: #E1D4C9;
 }/*# sourceMappingURL=style.css.map */
