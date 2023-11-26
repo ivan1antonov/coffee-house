@@ -422,5 +422,119 @@ a{
       }
     } 
   }
-
+}
+.footer{
+  margin-bottom: 40px;
+  &-wramper{
+    border-radius: 40px;
+    background: $bg-container;
+    display: flex;
+    max-width: 1360px;
+    padding: 100px;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    align-self: stretch;
+  }
+  &-social{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex: 1 0 0;
+    &__list{
+      display: flex;
+    }
+    &__item{
+      padding: 18px;
+    }
+    &__item + &__item{
+      margin-left: 12px;
+    }
+    &__img{
+      padding: 18px;
+      border: 1px solid $border-light;
+      border-radius: 50%;
+      transition: all 0.3s;
+      & svg{
+        display: block;
+      }
+      &:hover{
+        background-color: $bg-body;
+        transition: all 0.3s;
+      }
+      &:hover svg path{
+        stroke: $text-dark;
+        transition: all 0.3s;        
+      }
+    }
+    &__text{
+      @extend %heading-2;
+      font-size: 60px;
+      color: $text-light;
+      & span{
+        @extend %heading-2-accent;
+        color: $text-accent;
+      }
+    }
+  }
+  &-contact{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 0 0;
+    &__title{
+      @extend %heading-3;
+      font-size: 24px;
+      color: $text-light;
+      margin-bottom: 40px
+    }
+    &__item{
+      @extend %link-button;
+      color: $text-light;
+      padding-left: 28px;
+      padding-bottom: 2px;
+      position: relative;
+      &::after{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        left: 0;
+      }
+      &::before{
+        display: block;
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        transition: all 0.2s;
+        background: $text-light;
+        opacity: 0; 
+      }
+      &:hover::before{
+        transition: all 0.2s;
+        opacity: 1;
+      }
+    }
+    &__item + &__item{
+      margin-top: 16px;
+    }
+    &__work-day{
+      cursor: pointer;
+    }
+    &__address::after{
+      background: url(../images/svg/pin-alt.svg);
+    }
+    &__tel::after{
+      background: url(../images/svg/phone.svg);
+    }
+    &__work-day::after{
+      background: url(../images/svg/clock.svg);
+    }
+  }
 }
