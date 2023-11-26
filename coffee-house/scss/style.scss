@@ -165,16 +165,36 @@ a{
       padding: 20px 78px;
       border: none;
       outline: none;
-      border-radius: 40px;
+      cursor: pointer;
+      border-radius: 100px;
+      &::before{
+        position: absolute;
+        content: "";
+        background-image: url(../images/svg/coffee-cup.svg);
+        right: 50px;
+        top: 50%;
+        width: 20px;
+        transform: translateY(-50%);
+        height: 20px;
+        opacity: 0;
+      }
+      &:hover{
+        position: relative;
+        transition: all 0.4s;
+        &::before{
+          opacity: 1;
+          transition: all 0.4s;
+        }
+      }
     }
   }  
 }
 .slider{
+  margin-bottom: 100px;
   &-title{
     @extend %heading-2;
     text-align: center;
     font-size: 60px;
-    margin-bottom: 40px;
     & span{
       @extend %heading-2-accent;
       font-size: 60px;
@@ -182,7 +202,163 @@ a{
   }
   &-wramper{
     display: flex;
+    flex-direction: column;
+  }
+   &-dots{
+    margin: 0 auto;
+    order: 1;
+    display: flex;
+    &__input{
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+    &__label{
+      display: flex;
+      align-items: center;
+    }
+    &__label + &__label{
+      margin-left: 12px;
+    }
+    &__label span{
+      display: block;
+      padding: 1em;
+      cursor: pointer;
+    }
+    &__input + label{
+      background-color: $border-light;
+      width: 40px;
+      height: 4px;
+      border-radius: 100px;
+    }    
+    &__input:checked + label{
+      background-color: $border-dark;
+    }
+  }
+  &-box{
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
+  }
+  &-inner{
+    max-width: 1152px;
+    width: 100%;
+    min-width: 480px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  &-descr{
+    color: $text-dark; 
+    max-width: 480px;     
+  }
+  &-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 100%;
+    transition: all 0.3s;
+    &__img{
+      display: block;
+      width: 480px;
+      margin-bottom: 20px;
+    }
+    &__title{
+      @extend %heading-3;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    &__text{
+      @extend %medium;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    &__price{
+      @extend %heading-3;
+      text-align: center;
+    }
+  }
+}
+// logical slider dots
+.slider-dots:has(#slider1:checked) ~ .slider-box > .slider-inner > .slider-item{
+  transform: translateX(0);
+}
+.slider-dots:has(#slider2:checked) ~ .slider-box > .slider-inner > .slider-item{
+  transform: translateX(-100%);
+}
+.slider-dots:has(#slider3:checked) ~ .slider-box > .slider-inner > .slider-item{
+  transform: translateX(-200%);
+}
+//arrows
+.arrow{  
+  padding: 18px;
+  border: 1px solid $border-dark;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+  &-right{
+    transform: rotate(180deg);
+  }
+  & svg{
+    display: block;
+  }
+  &:hover{
+    transition: all 0.3s;
+    background: $bg-backdrop;
+    & svg path{
+      stroke: #fff;
+      transition: all 0.3s;
+    }
+  }
+}
+.gallery{
+  margin-bottom: 40px;
+  &-title{
+    @extend %heading-2;
+    font-size: 60px;
+    color: $text-dark;
+    margin-bottom: 40px;
+    & span{
+      @extend %heading-2-accent;
+      font-size: 60px;
+      color: $text-accent;
+    }
+  }
+  &-box{
+    column-count: 2;
+    column-gap: 40px;
+  }
+  &__item{
+    max-width: 660px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-box{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    &-img{
+      display: block;
+    }
+    &:hover &-box{
+      transform: scale(0.9);
+      transition: all 0.3s;
+    }
+  }
+  &__item-max{
+    height: 590px;
+  }
+  &__item-min{
+    height: 430px;
   }
 }
