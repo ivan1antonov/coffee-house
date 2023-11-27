@@ -274,6 +274,9 @@ a {
   background-color: #665F55;
   color: #E1D4C9;
 }
+.menu-tabs__item.active > .menu-tabs__item-text {
+  color: #E1D4C9;
+}
 .menu-tabs__image {
   background-color: #C1B6AD;
   border: 1px solid #C1B6AD;
