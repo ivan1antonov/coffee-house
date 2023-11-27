@@ -1,7 +1,7 @@
 .header-bottom__title {
   font-size: 42px;
   font-weight: 600;
-  line-height: 115%;
+  line-height: 105%;
 }
 
 .header-bottom__title span {
@@ -54,11 +54,11 @@ a {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .header {
-  padding-top: 20px;
+  padding-top: 18px;
   margin-bottom: 100px;
 }
 .header-top {
@@ -150,6 +150,7 @@ a {
   margin-bottom: 40px;
 }
 .header-bottom__btn {
+  display: inline-block;
   background-color: #E1D4C9;
   color: #403F3D;
   padding: 20px 78px;
@@ -184,8 +185,10 @@ a {
 .slider-title {
   text-align: center;
   font-size: 60px;
+  margin-bottom: 40px;
 }
 .slider-title span {
+  color: #B0907A;
   font-size: 60px;
 }
 .slider-wramper {
@@ -303,7 +306,7 @@ a {
 }
 
 .gallery {
-  margin-bottom: 40px;
+  margin-bottom: 55px;
 }
 .gallery-title {
   font-size: 60px;
@@ -388,14 +391,17 @@ a {
   transition: all 0.3s;
 }
 .apps-download__btn svg {
-  margin-right: 2px;
+  margin-right: 7px;
 }
 .apps-download__btn-text {
   color: #403F3D;
   font-size: 10px;
+  padding-top: 2px;
 }
 .apps-download__btn-text span {
   font-size: 16px;
+  display: block;
+  padding-top: 2px;
 }
 .apps-download__btn:hover {
   background: #665F55;
@@ -432,9 +438,10 @@ a {
 }
 .footer-social__list {
   display: flex;
+  margin: 0;
 }
 .footer-social__item + .footer-social__item {
-  margin-left: 12px;
+  margin-left: 10px;
 }
 .footer-social__img {
   padding: 18px;
@@ -466,6 +473,7 @@ a {
   justify-content: center;
   align-items: flex-start;
   flex: 1 0 0;
+  margin-top: 10px;
 }
 .footer-contact__title {
   font-size: 24px;
@@ -502,7 +510,7 @@ a {
   opacity: 1;
 }
 .footer-contact__item + .footer-contact__item {
-  margin-top: 16px;
+  margin-top: 18px;
 }
 .footer-contact__work-day {
   cursor: pointer;
