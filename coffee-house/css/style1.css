@@ -54,46 +54,44 @@ a {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .header {
-  padding-top: 18px;
-  margin-bottom: 20px;
+  padding-top: 20px;
 }
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .header-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .header-menu__btn {
   display: block;
-  margin-bottom: 6px;
 }
-.header-item {
+.header-item, .header-menu__btn {
   position: relative;
 }
-.header-item::after {
+.header-item::after, .header-menu__btn::after {
   display: block;
   position: absolute;
   content: "";
   left: 0;
   right: 0;
-  bottom: -1;
+  bottom: 0;
   height: 2px;
   transition: all 0.2s;
   background: #403F3D;
   opacity: 0;
 }
-.header-item:hover::after {
+.header-item:hover::after, .header-menu__btn:hover::after {
   opacity: 1;
   transition: all 0.2s;
 }
@@ -104,7 +102,6 @@ a {
   margin-left: 40px;
 }
 .header-menu__btn {
-  display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -121,7 +118,7 @@ a {
   content: "";
   background-image: url(../images/svg/coffee-cup.svg);
   right: 0;
-  top: 4px;
+  top: 0;
   width: 20px;
   height: 20px;
 }
@@ -136,21 +133,20 @@ a {
   background-size: cover;
   padding-left: 100px;
   padding-top: 100px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
   width: 630px;
 }
 .header-bottom__title {
   font-size: 72px;
   color: #E1D4C9;
   margin-bottom: 40px;
-  line-height: 105%;
 }
 .header-bottom__title span {
   color: #B0907A;
 }
 .header-bottom__text {
   color: #E1D4C9;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .header-bottom__btn {
   background-color: #E1D4C9;
@@ -181,44 +177,6 @@ a {
   transition: all 0.4s;
 }
 
-.underline-hover {
-  position: relative;
-}
-.underline-hover::after {
-  display: block;
-  position: absolute;
-  content: "";
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  transition: all 0.2s;
-  background: #403F3D;
-  opacity: 0;
-}
-.underline-hover:hover::after {
-  opacity: 1;
-  transition: all 0.2s;
-}
-
-.underline-active {
-  position: relative;
-  padding-bottom: 4px;
-  padding-top: 4px;
-}
-.underline-active::after {
-  display: block;
-  position: absolute;
-  content: "";
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  transition: all 0.2s;
-  background: #403F3D;
-  opacity: 1;
-}
-
 .slider {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -226,7 +184,6 @@ a {
 .slider-title {
   text-align: center;
   font-size: 60px;
-  margin-bottom: 40px;
 }
 .slider-title span {
   color: #B0907A;
@@ -347,7 +304,7 @@ a {
 }
 
 .gallery {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .gallery-title {
   font-size: 60px;
@@ -395,7 +352,7 @@ a {
 }
 
 .apps {
-  margin-bottom: 95px;
+  margin-bottom: 100px;
 }
 .apps-wramper {
   display: flex;
@@ -437,9 +394,6 @@ a {
 .apps-download__btn-text {
   color: #403F3D;
   font-size: 10px;
-  padding-left: 5px;
-  padding-bottom: 4px;
-  padding-top: 0;
 }
 .apps-download__btn-text span {
   font-size: 16px;
@@ -479,10 +433,9 @@ a {
 }
 .footer-social__list {
   display: flex;
-  margin: 0;
 }
 .footer-social__item + .footer-social__item {
-  margin-left: 10px;
+  margin-left: 12px;
 }
 .footer-social__img {
   padding: 18px;
@@ -514,7 +467,6 @@ a {
   justify-content: center;
   align-items: flex-start;
   flex: 1 0 0;
-  margin-top: 10px;
 }
 .footer-contact__title {
   font-size: 24px;
@@ -551,7 +503,7 @@ a {
   opacity: 1;
 }
 .footer-contact__item + .footer-contact__item {
-  margin-top: 18px;
+  margin-top: 16px;
 }
 .footer-contact__work-day {
   cursor: pointer;
@@ -610,15 +562,12 @@ a {
   color: #E1D4C9;
   transition: all 0.3s;
 }
-.menu-tabs__item:hover .menu-tabs__item-text {
-  color: #E1D4C9;
-  transition: all 0.3s;
-}
 .menu-tabs__item.active {
   border-color: #665F55;
   background-color: #665F55;
+  color: #E1D4C9;
 }
-.menu-tabs__item.active .menu-tabs__item-text {
+.menu-tabs__item.active > .menu-tabs__item-text {
   color: #E1D4C9;
 }
 .menu-tabs__image {
@@ -688,4 +637,4 @@ a {
 }
 .menu-grid__price {
   margin: 0;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style1.css.map */
