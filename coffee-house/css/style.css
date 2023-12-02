@@ -654,6 +654,13 @@ a {
   border-color: #665F55;
   background-color: #665F55;
 }
+.menu-tabs__item.active:hover {
+  border-color: #665F55;
+  background-color: #665F55;
+}
+.menu-tabs__item.active:hover .menu-tabs__item-text {
+  color: #E1D4C9;
+}
 .menu-tabs__item.active .menu-tabs__item-text {
   color: #E1D4C9;
 }
@@ -749,6 +756,64 @@ a {
 }
 
 @media (max-width: 1180px) {
+  .header-item:not(.no-hover)::after,
+  .underline-hover:not(.no-hover)::after {
+    display: none;
+  }
+  .header-bottom__btn:not(.no-hover)::before,
+  .footer-contact__item:not(.no-hover)::before {
+    display: none;
+  }
+  .arrow:hover {
+    background: transparent;
+    transition: all 0s;
+  }
+  .arrow:hover svg path {
+    stroke: #403F3D;
+    transition: all 0s;
+  }
+  .gallery__item-box {
+    transform: scale(0.9);
+  }
+  .gallery__item:hover .gallery__item-box {
+    transform: scale(0.9);
+    transition: all 0s;
+  }
+  .apps-download__btn:hover {
+    transition: all 0.3s;
+    background: transparent;
+  }
+  .apps-download__btn:hover p {
+    color: #403F3D;
+  }
+  .apps-download__btn:hover svg path {
+    fill: #403F3D;
+  }
+  .footer-social__img:hover {
+    background-color: transparent;
+    transition: all 0s;
+  }
+  .footer-social__img:hover svg path {
+    stroke: #E1D4C9;
+    transition: all 0s;
+  }
+  .menu-tabs__item:hover {
+    border-color: #c1b6ad;
+    background-color: transparent;
+    transition: all 0s;
+  }
+  .menu-tabs__item:hover .menu-tabs__item-text {
+    transition: all 0s;
+    color: #403F3D;
+  }
+  .menu-grid__box {
+    transition: all 0s;
+    transform: scale(1);
+  }
+  .menu-grid__item:hover .menu-grid__box {
+    transform: scale(1);
+    transition: all 0s;
+  }
   .apps-wramper {
     flex-direction: column;
   }

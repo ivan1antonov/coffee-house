@@ -51,7 +51,7 @@ a{
     }
     &:hover::after{
       opacity: 1;
-      transition: all 0.2s;      
+      transition: all 0.2s;   
     }
   }
   &-link{
@@ -604,6 +604,13 @@ a{
       &.active{
         border-color: $bg-container;
         background-color: $bg-container;
+        &:hover{
+          border-color: $bg-container;
+          background-color: $bg-container;
+          .menu-tabs__item-text{
+            color: $text-light;
+          }
+        }
       }
       &.active &-text{
         color: $text-light;
