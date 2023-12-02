@@ -95,19 +95,21 @@ a{
     border-radius: 40px;
     width: 100%;
     background-image: url(../images/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     &__box{      
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      padding-left: 100px;
-      padding-top: 100px;
-      padding-bottom: 120px;
-      width: 630px;
+      padding: 100px 100px 120px;
     }
     &__title{
       @include heading-1;
       font-size: 72px;
       color: $text-light;
+      max-width: 530px;
+      width: 100%;
       margin-bottom: 40px;
       line-height: 105%;
       & span{
@@ -118,6 +120,8 @@ a{
     &__text{
       @include medium;
       color: $text-light;
+      max-width: 530px;
+      width: 100%;
       margin-bottom: 60px;
     }
     &__btn{
