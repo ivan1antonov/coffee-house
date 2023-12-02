@@ -1,54 +1,5 @@
-%heading-1{
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 115%;
-}
-%heading-1-accent{
-  font-style: italic;
-}
-%heading-2{
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 125%;
-}
-%heading-2-accent{
-  font-style: italic;
-}
-%heading-3{
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 125%;
-}
-%medium{
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 150%;
-}
-%caption{
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 140%;
-}
-%link-button{
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 150%;
-}
-%burger-link{
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 125%;
-}
+@import 'vars';
 
-$text-accent: #B0907A;
-$text-light: #E1D4C9;
-$text-dark: #403F3D;
-$bg-body: #E1D4C9;
-$bg-container: #665F55;
-$bg-backdrop: #403F3D;
-$border-dark: #665F55;
-$border-light: #C1B6AD;
-$inter: 'Inter', sans-serif;
 html{
   scroll-behavior: smooth;
 }
@@ -84,10 +35,6 @@ a{
     margin-top: 10px;
     margin-bottom: 12px;
   }
-  &-menu__btn{
-    display: block;
-    margin-bottom: 6px;
-  }
   &-item{
     position: relative;
     &::after{
@@ -109,7 +56,7 @@ a{
   }
   &-link{
     color: $text-dark;
-    @extend %link-button;
+    @include link-button;
   }
   &-item + &-item{
     margin-left: 40px;
@@ -124,8 +71,7 @@ a{
     cursor: pointer;
     background: transparent;
     outline: none;
-    padding-right: 26px;
-    padding-left: 0;
+    padding: 4px 26px 4px 0;
     &::before{
       position: absolute;
       content: '';
@@ -135,6 +81,15 @@ a{
       width: 20px;
       height: 20px;
     }
+  }
+  &-menu__mobile{
+    display: none;
+  }
+  &-burger{
+    display: none;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
   }
   &-bottom{
     border-radius: 40px;
@@ -150,23 +105,23 @@ a{
       width: 630px;
     }
     &__title{
-      @extend %heading-1;
+      @include heading-1;
       font-size: 72px;
       color: $text-light;
       margin-bottom: 40px;
       line-height: 105%;
       & span{
-        @extend %heading-1-accent;
+        @include heading-1-accent;
         color: $text-accent;
       }
     }
     &__text{
-      @extend %medium;
+      @include medium;
       color: $text-light;
       margin-bottom: 60px;
     }
     &__btn{
-      @extend %link-button;
+      @include link-button;
       background-color: $text-light;
       color: $text-dark;
       padding: 20px 78px;
@@ -236,12 +191,12 @@ a{
   margin-top: 100px;
   margin-bottom: 100px;
   &-title{
-    @extend %heading-2;
+    @include heading-2;
     text-align: center;
     font-size: 60px;
     margin-bottom: 40px;
     & span{
-      @extend %heading-2-accent;
+      @include heading-2-accent;
       color: $text-accent;
       font-size: 60px;
     }
@@ -312,17 +267,17 @@ a{
       margin-bottom: 20px;
     }
     &__title{
-      @extend %heading-3;
+      @include heading-3;
       margin-bottom: 16px;
       text-align: center;
     }
     &__text{
-      @extend %medium;
+      @include medium;
       margin-bottom: 16px;
       text-align: center;
     }
     &__price{
-      @extend %heading-3;
+      @include heading-3;
       text-align: center;
     }
   }
@@ -364,12 +319,12 @@ a{
 .gallery{
   margin-bottom: 60px;
   &-title{
-    @extend %heading-2;
+    @include heading-2;
     font-size: 60px;
     color: $text-dark;
     margin-bottom: 40px;
     & span{
-      @extend %heading-2-accent;
+      @include heading-2-accent;
       font-size: 60px;
       color: $text-accent;
     }
@@ -418,17 +373,17 @@ a{
   &-item{
     max-width: 630px;
     &__title{
-      @extend %heading-2;
+      @include heading-2;
       font-size: 60px;
       color: $text-dark;
       margin-bottom: 40px;
       & span{
-        @extend %heading-2-accent;
+        @include heading-2-accent;
         color: $text-accent;
       }
     }
     &__text{
-      @extend %medium;
+      @include medium;
       margin-bottom: 40px;
     }
   }
@@ -455,7 +410,7 @@ a{
         padding-bottom: 4px;
         padding-top: 0;
         & span{
-          @extend %link-button;
+          @include link-button;
           font-size: 16px;
         }
       }
@@ -496,8 +451,6 @@ a{
       display: flex;
       margin: 0;
     }
-    &__item{
-    }
     &__item + &__item{
       margin-left: 10px;
     }
@@ -519,11 +472,11 @@ a{
       }
     }
     &__text{
-      @extend %heading-2;
+      @include heading-2;
       font-size: 60px;
       color: $text-light;
       & span{
-        @extend %heading-2-accent;
+        @include heading-2-accent;
         color: $text-accent;
       }
     }
@@ -536,13 +489,13 @@ a{
     flex: 1 0 0;
     margin-top: 10px;
     &__title{
-      @extend %heading-3;
+      @include heading-3;
       font-size: 24px;
       color: $text-light;
       margin-bottom: 40px
     }
     &__item{
-      @extend %link-button;
+      @include link-button;
       color: $text-light;
       padding-left: 28px;
       padding-bottom: 2px;
@@ -591,7 +544,7 @@ a{
 .menu{
   margin-bottom: 100px;
   &-offer{
-    @extend %heading-2;
+    @include heading-2;
     font-size: 60px;
     color: $text-dark;
     text-align: center;
@@ -599,7 +552,7 @@ a{
     margin-bottom: 40px;
     max-width: 800px;
     & span{
-      @extend %heading-2-accent;
+      @include heading-2-accent;
       color: $text-accent;
     }
   }
@@ -621,7 +574,7 @@ a{
       transition: all 0.3s;
       &-text{
         margin-left: 8px;
-        @extend %link-button;
+        @include link-button;
         color: $text-dark;
         margin-top: 0;
         margin-bottom: 0;
@@ -668,7 +621,7 @@ a{
       border-radius: 40px;
     }
     &__item{
-      @extend %heading-3;
+      @include heading-3;
       border: 1px solid $border-light;
       border-radius: 40px;
       width: 310px;   
@@ -700,12 +653,12 @@ a{
       margin: 20px;
     }
     &__title{
-      @extend %heading-3;
+      @include heading-3;
       margin-bottom: 12px;
       line-height: 125%;
     }
     &__text{
-      @extend %medium;
+      @include medium;
       height: 72px;
       overflow: hidden;
       margin-top: 0;
@@ -716,3 +669,5 @@ a{
     }
   }
 }
+
+@import 'media';
