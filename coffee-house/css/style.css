@@ -754,13 +754,32 @@ a {
   }
   .apps-item + .apps-item {
     margin-top: 100px;
+    max-width: 630px;
+    display: flex;
+    justify-content: center;
+  }
+  .apps-item + .apps-item__image {
+    display: block;
+  }
+  .apps-item {
+    max-width: 100%;
+  }
+  .apps-download__btn-text {
+    padding-top: 8px;
+  }
+  .apps-download__btn-text span {
+    display: block;
+    margin-top: 4px;
   }
   .menu-grid {
     height: 1052px;
     overflow: hidden;
   }
   .menu-refresh {
-    display: block;
+    display: flex;
+  }
+  .footer-contact__work-day {
+    margin-bottom: 0;
   }
 }
 @media (max-width: 850px) {
@@ -778,6 +797,9 @@ a {
   .footer-wramper {
     padding: 100px 60px;
     display: block;
+  }
+  .footer-social {
+    gap: 35px;
   }
   .footer-contact {
     margin-top: 100px;
@@ -839,6 +861,10 @@ a {
   }
   .header-bottom__title {
     font-size: 42px;
+    line-height: 115%;
+  }
+  .header-bottom__text {
+    margin-bottom: 40px;
   }
   .header-bottom__btn {
     display: inline-block;
@@ -872,6 +898,9 @@ a {
   .apps-download {
     display: block;
   }
+  .apps-download__apple {
+    margin-bottom: 20px;
+  }
   .apps-download__link {
     display: block;
   }
@@ -880,6 +909,9 @@ a {
   }
   .menu-offer {
     font-size: 32px;
+  }
+  .menu-tabs__item + .menu-tabs__item {
+    margin-left: 8px;
   }
   .footer-wramper {
     padding: 60px 16px;
