@@ -202,7 +202,6 @@ a{
     & span{
       @include heading-2-accent;
       color: $text-accent;
-      font-size: 60px;
     }
   }
   &-wramper{
@@ -249,25 +248,28 @@ a{
   &-inner{
     max-width: 1152px;
     width: 100%;
-    min-width: 480px;
+    min-width: 348px;
     display: flex;
     align-items: center;
     overflow: hidden;
   }
   &-descr{
     color: $text-dark; 
-    max-width: 480px;     
+    max-width: 480px;
+    width: 100%;     
   }
   &-item{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 480px;
     min-width: 100%;
     transition: all 0.3s;
     &__img{
       display: block;
-      width: 480px;
+      width: 100%;
+      max-width: 480px;
       margin-bottom: 20px;
     }
     &__title{
