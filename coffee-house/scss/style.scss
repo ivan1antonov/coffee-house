@@ -155,6 +155,9 @@ a{
     }
   }     
 }
+.main{
+  margin-bottom: 100px;
+}
 .underline-hover{
   position: relative;
   &::after{
@@ -622,10 +625,11 @@ a{
     }
   }
   &-grid{
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     &__items{
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 40px; 
       border-radius: 40px;
     }
@@ -675,6 +679,18 @@ a{
     }
     &__price{
       margin: 0;
+    }
+  }
+  &-refresh{
+    display: none;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    &__img{
+      width: 60px;
+      height: 60px;
     }
   }
 }
