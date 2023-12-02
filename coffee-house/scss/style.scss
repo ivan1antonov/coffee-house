@@ -377,6 +377,7 @@ a{
   }
   &-item{
     max-width: 630px;
+    width: 100%;
     &__title{
       @include heading-2;
       font-size: 60px;
@@ -386,6 +387,9 @@ a{
         @include heading-2-accent;
         color: $text-accent;
       }
+    }
+    &__image{
+      width: 100%;
     }
     &__text{
       @include medium;
