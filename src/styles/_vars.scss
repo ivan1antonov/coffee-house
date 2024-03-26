@@ -1,0 +1,53 @@
+@mixin heading-1{
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 115%;
+}
+@mixin heading-1-accent{
+  font-style: italic;
+}
+@mixin heading-2{
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 125%;
+}
+@mixin heading-2-accent{
+  font-style: italic;
+}
+@mixin heading-3{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+}
+@mixin medium{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+@mixin caption{
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 140%;
+}
+@mixin link-button{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+}
+@mixin burger-link{
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+$text-accent: #B0907A;
+$text-light: #E1D4C9;
+$text-dark: #403F3D;
+$bg-body: #E1D4C9;
+$bg-container: #665F55;
+$bg-backdrop: #403F3D;
+$border-dark: #665F55;
+$border-light: #C1B6AD;
+$inter: 'Inter', sans-serif;
+$path1: "M16.3431 16.3433L27.6568 27.657";
+$path2: "M16.3431 27.657L27.6568 16.3433";

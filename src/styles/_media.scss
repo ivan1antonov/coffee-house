@@ -1,0 +1,352 @@
+@import 'vars';
+
+@media (max-width:1180px){
+  //not hover
+  .header-item,
+  .underline-hover{
+    &:not(.no-hover)::after{
+      display: none;
+    }
+  }
+  .header-bottom__btn,
+  .footer-contact__item{
+    &:not(.no-hover)::before{
+      display: none;
+    }
+  }
+  .arrow:hover{
+      background: transparent;
+      transition: all 0s;
+    & svg path{
+      stroke: #403F3D;
+      transition: all 0s;
+    }
+  }
+  .gallery__item-box{
+    transform: scale(0.9);
+  }
+  .gallery__item:hover .gallery__item-box{
+    transform: scale(0.9);
+    transition: all 0s;
+  }
+  .apps-download__btn:hover{
+    transition: all 0.3s;
+    background: transparent;
+    & p{
+      color: $text-dark;
+    }
+    & svg path{
+      fill: $text-dark;
+    }
+  }
+  .footer-social__img:hover{
+    background-color: transparent;
+    transition: all 0s;
+  }
+  .footer-social__img:hover svg path{
+    stroke: #E1D4C9;
+    transition: all 0s;        
+  }
+  .menu-tabs__item:hover{
+    border-color: #c1b6ad;
+    background-color: transparent;
+    transition: all 0s;
+  }
+  .menu-tabs__item:hover .menu-tabs__item-text{
+    transition: all 0s;
+    color: $text-dark;
+  }
+  .menu-grid__box{
+    transition: all 0s;
+    transform: scale(1);
+  }
+  .menu-grid__item:hover .menu-grid__box{
+    transform: scale(1);
+    transition: all 0s;
+  }
+  //media css
+  .apps{
+    &-wramper{
+      flex-direction: column;
+    }
+    &-item + &-item{
+      margin-top: 100px;
+      max-width: 630px;
+      display: flex;
+      justify-content: center;
+      &__image{
+        display: block;
+      }
+    }
+    &-item{
+      max-width: 100%;
+    }
+    &-download{
+      &__btn-text {
+        padding-top: 8px;
+        & span{
+          display: block;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+  .menu{
+    &-grid{
+      height: 1052px;
+      overflow: hidden;
+    }
+    &-refresh{
+      display: flex;
+    }
+  }
+  .footer{
+    &-contact{
+      &__work-day{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+@media (max-width:850px){
+  .gallery{
+    &-box{
+      column-count: 1;
+      gap: 0;
+    }
+    &__item{
+      max-width: 100%;
+      &-min{
+        display: none;
+      }
+    }
+  }
+  .footer{
+    &-wramper{
+      padding: 100px 60px;
+      display: block;
+    }
+    &-social{
+      gap: 35px;
+    }
+    &-contact{
+      margin-top: 100px;
+    }
+  }
+}
+@media (max-width:768px) {
+  .header{
+    &-wramper{
+      position: absolute;
+      top: 100px;
+      bottom: 1024px;
+      left: 0;
+      right: 0;
+    }
+    &-nav{
+      text-align: center;
+      transform: translateX(200%);
+      transition: 0.5s all;
+      position: fixed;
+      background: $bg-body;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 10;
+    }
+    &-nav.active{
+      transform: translateX(0%);
+      transition: 0.3s all;
+      padding-top: 100px;
+    }
+    &-burger svg path{
+      transition: all 0.3s;
+      transform: rotate(0deg);    
+      
+    }
+    &-burger.active svg path+path{
+      transition: all 0.3s;
+      
+    }
+    &-burger.active svg path{
+      transform-origin: 64% 47%;
+      transform: rotate(-45deg);
+      transition: all 0.3s;
+      }
+    &-burger.active svg path+path{
+      transform-origin: 57% 55%;
+      transform: rotate(45deg);
+      transition: all 0.3s;
+    }
+    &-list{
+      display: flex;
+      flex-direction: column;  
+      margin: 60px auto 100px;      
+      width: fit-content;
+    }
+    &-link,
+    &-menu__btn{
+      @include burger-link; 
+    }
+    &-menu__btn{
+      padding: 0 56px 0 0;
+    }
+    &-menu__btn::before{
+      width: 40px;
+      height: 40px;
+      top: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &-item + &-item{
+      margin-left: 0;
+      margin-top: 60px;
+    }
+    &-menu{
+      &__mobile{
+        display: block;
+        margin-bottom: 384px;
+      }
+      &__desktop{
+        display: none;
+      }
+    }
+    &-burger{
+      display: block;
+      cursor: pointer;
+    }
+  }
+  .menu{
+    &-modal{
+      width: 95%;
+      &__warn{
+        padding: 12px 0 12px 24px;
+      }
+      &__item{
+        margin-right: 8px;
+      }
+      &__item + &__item{
+        margin-left: 0;
+      }
+      &__label + &__label{
+        margin-left: 0;
+      }
+    }
+  }
+}
+@media (max-width: 740px) {
+  .container{
+    padding: 0 16px;
+  }
+  .header{
+    &-bottom{
+      &__title{
+        font-size: 42px;
+        line-height: 115%;
+      }
+      &__text{
+        margin-bottom: 40px;
+      }
+      &__btn{
+        display: inline-block;
+      }
+    }
+  }
+  .menu{
+    &-grid{
+      height: 2144px;
+    }
+  }
+  .arrow{
+    display: none;
+  }
+  .slider{
+    &-item{
+      min-width: 100%;
+    }
+  }
+}
+@media (max-width: 500px){
+  .header{
+    &-bottom{
+      &__box{
+        padding: 60px 16px;
+      }
+      &__video{
+        & video {
+          height: 552px;
+        }
+      }
+    }
+  }
+  .slider{
+    &-title{
+      font-size: 32px;
+    }
+  }
+  .gallery{
+    &-title{
+      font-size: 32px;
+    }
+  }
+  .apps{
+    &-item + &-item{
+      margin-top: 40px;
+    }
+    &-item__title{
+      font-size: 32px;
+    }
+    &-download{
+      display: block;
+      &__apple{
+        margin-bottom: 20px;
+      }
+      &__link{
+        display: block;
+      }
+      &-link + &-link{
+        margin-top: 20px;
+      }
+    }
+  }
+  .menu{
+    &-offer{
+      font-size: 32px;
+    }
+    &-tabs__item + &-tabs__item{
+      margin-left: 8px;
+    }
+  }
+  .footer{
+    &-wramper{
+      padding: 60px 16px;
+    }
+    &-contact{
+      margin-top: 40px;
+    }
+    &-social__text{
+      font-size: 32px;
+      & br{
+        display: none;
+      }
+    }
+  }
+  .menu-modal__img{
+    display: none;
+  }
+}
+@media (max-width: 380px) {
+  .menu-modal{
+    width: 93%;
+  }
+  .footer{
+    &-social{
+      min-width: 100%;
+      &__text{
+        width: 100%;
+
+      }
+    }
+  }
+}

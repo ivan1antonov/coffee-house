@@ -1,0 +1,8 @@
+node_modules/
+dist/
+webpack.config.js
+.browserslistrc
+.eslintrc.js
+.prettierrc
+package-lock.json
+package.json
