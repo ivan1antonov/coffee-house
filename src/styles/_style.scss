@@ -42,6 +42,7 @@ a {
     align-items: center;
     margin-top: 10px;
     margin-bottom: 12px;
+    list-style: none;
   }
   &-item {
     position: relative;
@@ -229,50 +230,42 @@ a {
   }
   &-dots {
     margin: 0 auto;
-    order: 1;
     display: flex;
-    &__input {
-      height: 0;
-      width: 0;
-      overflow: hidden;
-    }
-    &__label {
-      display: flex;
-      align-items: center;
-    }
-    &__label + &__label {
-      margin-left: 12px;
-    }
-    &__label span {
-      display: block;
-      padding: 22px;
-      cursor: pointer;
-    }
-    &__input + label {
-      background-color: $border-light;
-      width: 40px;
-      height: 4px;
-      border-radius: 100px;
-    }
-    &__input:checked + &__label {
+  }
+  &-dot {
+    background-color: $border-light;
+    width: 40px;
+    height: 4px;
+    border-radius: 100px;
+    margin-left: 12px;
+    transition: all 0.3s;
+    &.active {
       position: relative;
-      background-color: $border-light;
+      // background-color: $border-dark;
+      transition: all 0.3s;
+      &::after {
+        position: absolute;
+        content: '';
+        background-color: $border-dark;
+        animation: pagination 5s linear;
+        width: 40px;
+        height: 4px;
+        top: 0;
+        border-radius: 100px;
+      }
     }
-    &__input:checked + &__label::after {
-      position: absolute;
-      content: '';
-      background-color: $border-dark;
-      animation: pagination 5s linear;
-      width: 40px;
-      height: 4px;
-      border-radius: 100px;
-    }
+  }
+  &-dot span {
+    display: block;
+    padding: 22px;
+    cursor: pointer;
   }
   &-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    overflow: hidden;
   }
   &-inner {
     max-width: 1152px;
@@ -280,7 +273,7 @@ a {
     min-width: 348px;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    transition: all 0.3s;
   }
   &-descr {
     color: $text-dark;
@@ -317,6 +310,7 @@ a {
     }
   }
 }
+
 @keyframes pagination {
   0% {
     width: 0%;
@@ -324,25 +318,6 @@ a {
   100% {
     width: 100%;
   }
-}
-// logical slider dots
-.slider-dots:has(#slider1:checked)
-  ~ .slider-box
-  > .slider-inner
-  > .slider-item {
-  transform: translateX(0);
-}
-.slider-dots:has(#slider2:checked)
-  ~ .slider-box
-  > .slider-inner
-  > .slider-item {
-  transform: translateX(-100%);
-}
-.slider-dots:has(#slider3:checked)
-  ~ .slider-box
-  > .slider-inner
-  > .slider-item {
-  transform: translateX(-200%);
 }
 //arrows
 .arrow {
@@ -353,6 +328,7 @@ a {
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
+  z-index: 10;
   &-right {
     transform: rotate(180deg);
   }

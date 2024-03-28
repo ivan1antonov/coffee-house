@@ -14,23 +14,30 @@ const burger = document.querySelector('.header-burger'),
   sliderPrev = document.querySelector('.arrow-left'),
   slider = document.querySelector('.slider-inner'),
   grid = document.querySelectorAll('.menu-grid__items'),
-  tabs = document.querySelectorAll('.menu-tabs__item');
+  tabs = document.querySelectorAll('.menu-tabs__item'),
+  sliderItem = Array.from(document.querySelectorAll('.slider-item__img')),
+  sliderLabel = Array.from(document.querySelectorAll('.slider-dots__label')),
+  blogs = Array.from(document.querySelectorAll('.slider-item'));
 let position = 0,
   dotIndex = 0,
-  tabsIndex,
-  gridIndex;
+  timerCurrent;
+let isMove = false;
+let currentIndex = 0;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
 
 // function burger
-burger.addEventListener('click', function () {
-  nav.classList.toggle('active');
-  burger.classList.toggle('active');
-});
-headerItem.forEach(el => {
-  el.addEventListener('click', function () {
-    nav.classList.remove('active');
-    burger.classList.remove('active');
-  });
-});
+// burger.addEventListener('click', function () {
+//   nav.classList.toggle('active');
+//   burger.classList.toggle('active');
+// });
+// headerItem.forEach(el => {
+//   el.addEventListener('click', function () {
+//     nav.classList.remove('active');
+//     burger.classList.remove('active');
+//   });
+// });
 
 const nextSlide = () => {
   dotIndex++;
@@ -51,30 +58,89 @@ const prevSlide = () => {
 const activeSlide = i => {
   dots[i].checked = true;
 };
-
 // auto play
-setInterval(nextSlide, 5000);
+currentStart();
+
+function currentStart() {
+  timerCurrent = setInterval(nextSlide, 5000);
+}
+
+function currentStop() {
+  clearInterval(timerCurrent);
+  timerCurrent = null;
+}
+
+//auto pause
+const sliderPlay = index => {
+  sliderLabel[index].classList.remove('stop');
+  currentStart();
+};
+const sliderPause = index => {
+  sliderLabel[index].classList.add('stop');
+  currentStop();
+};
+
+sliderItem.forEach((el, index) => {
+  el.addEventListener('mouseout', function () {
+    sliderPlay(index);
+  });
+  el.addEventListener('mouseover', function () {
+    sliderPause(index);
+  });
+  el.addEventListener('touchend', function () {
+    sliderPlay(index);
+  });
+  el.addEventListener('touchstart', function () {
+    sliderPause(index);
+  });
+  el.addEventListener('pointerdown', event => {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+});
+
+//touch slider
+
+blogs.forEach(slide => {
+  slide.addEventListener('touchstart', touchStart);
+  slide.addEventListener('touchmove', touchMove);
+  slide.addEventListener('touchend', touchEnd);
+});
+
+function touchStart(event) {
+  startPos = getPos(event);
+  isMove = true;
+}
+
+function touchMove(event) {
+  if (isMove) {
+    const currentPosition = getPos(event);
+    currentTranslate = prevTranslate + currentPosition - startPos;
+  }
+}
+
+function touchEnd() {
+  isMove = false;
+  const moveBy = currentTranslate - prevTranslate;
+  if (moveBy < -100) {
+    nextSlide();
+  }
+  if (moveBy > 100) {
+    prevSlide();
+  }
+}
+
+function getPos(event) {
+  return event.touches[0].clientX;
+}
 
 // arrow button
 sliderPrev.addEventListener('click', prevSlide);
 sliderNext.addEventListener('click', nextSlide);
 
-//main.js
-// const burger = document.querySelector('.header-burger'),
-//   menuButton = document.querySelector('.header-menu__mobile'),
-//   burgerImg = document.querySelector('.header-burger__img'),
-//   nav = document.querySelector('.header-nav'),
-//   headerItem = document.querySelectorAll('.header-item'),
-//   dots = document.querySelectorAll('.slider-dots__input'),
-//   refreshButton = document.querySelector('.menu-refresh'),
-//   menu = document.querySelector('.main'),
-//   sliderNext = document.querySelector('.arrow-right'),
-//   sliderPrev = document.querySelector('.arrow-left'),
-//   slider = document.querySelector('.slider-inner'),
-//   grid = document.querySelectorAll('.menu-grid__items'),
-//   tabs = document.querySelectorAll('.menu-tabs__item');
+// //main.js
 
-//popap
+// // popap;
 // const modalClose = document.querySelector('.menu-modal__close'),
 //   modal = document.querySelector('.menu-modal'),
 //   pageShadow = document.querySelector('.page-shadow'),
