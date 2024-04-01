@@ -9,6 +9,7 @@ body {
   color: $bg-backdrop;
   &.modal-open {
     overflow: hidden;
+    width: calc(100vw - 15px);
   }
   &.active {
     overflow: hidden;
@@ -743,6 +744,11 @@ a {
     &.active {
       display: block;
     }
+    &__box {
+      min-width: 310px;
+      height: 310px;
+      overflow: hidden;
+    }
     &__wramper {
       display: flex;
       justify-content: space-between;
@@ -752,6 +758,7 @@ a {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      padding-left: 0;
     }
     &__additives {
       display: flex;
