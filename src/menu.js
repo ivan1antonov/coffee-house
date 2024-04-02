@@ -128,7 +128,12 @@ function openModal() {
   clearItem();
   clearAdditions();
   getTotalCost();
+  modal.style.opacity = 0;
   modal.classList.add('active');
+  modal.style.transition = '400ms';
+  setTimeout(() => {
+    modal.style.opacity = 1;
+  }, 400);
   pageShadow.classList.add('active');
   document.body.classList.add('modal-open');
 }
