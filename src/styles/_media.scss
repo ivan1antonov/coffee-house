@@ -22,6 +22,11 @@
       transition: all 0s;
     }
   }
+  .menu-grid.more {
+    height: auto;
+    padding-bottom: 105.5px;
+    margin-bottom: 0;
+  }
   .gallery__item-box {
     transform: scale(0.9);
   }
@@ -93,11 +98,8 @@
   }
   .menu {
     &-grid {
-      height: 1052px;
+      height: 1100px;
       overflow: hidden;
-    }
-    &-refresh {
-      display: flex;
     }
   }
   .footer {

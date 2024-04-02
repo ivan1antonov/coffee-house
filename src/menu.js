@@ -11,6 +11,7 @@ const burger = document.querySelector('.header-burger'),
   headerItem = document.querySelectorAll('.header-item'),
   refreshButton = document.querySelector('.menu-refresh'),
   menu = document.querySelector('.main'),
+  menuGrid = document.querySelector('.menu-grid'),
   grid = document.querySelectorAll('.menu-grid__items'),
   modalTitle = document.querySelector('.menu-modal__title'),
   modalText = document.querySelector('.menu-modal__text'),
@@ -130,10 +131,10 @@ function openModal() {
   getTotalCost();
   modal.style.opacity = 0;
   modal.classList.add('active');
-  modal.style.transition = '400ms';
+  modal.style.transition = '500ms';
   setTimeout(() => {
     modal.style.opacity = 1;
-  }, 400);
+  }, 10);
   pageShadow.classList.add('active');
   document.body.classList.add('modal-open');
 }
@@ -169,5 +170,13 @@ for (let i = 0; i < tabs.length; i++) {
     if (item.length < 5 && menu.offsetWidth < 1180) {
       refreshButton.style.display = 'none';
     }
+    refreshButton.classList.add('active');
+    menuGrid.classList.remove('more');
   });
 }
+
+//function refresh button
+refreshButton.addEventListener('click', function () {
+  menuGrid.classList.add('more');
+  refreshButton.classList.remove('active');
+});
