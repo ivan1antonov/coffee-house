@@ -65,7 +65,6 @@ function getTotalCost() {
 menuItem.forEach((el, ind) => {
   el.addEventListener('click', () => {
     firstPrice = products[ind].price;
-    getTotalCost();
     openModal();
     modalImg.src = gridImg[ind].src;
     modalTitle.innerHTML = products[ind].name;
@@ -114,6 +113,7 @@ function clearItem() {
     el.classList.remove('active');
   });
   modalItem[0].classList.add('active');
+  mlCost = 0;
 }
 
 function clearAdditions() {
@@ -125,11 +125,12 @@ function clearAdditions() {
 
 //function open modal
 function openModal() {
+  clearItem();
+  clearAdditions();
+  getTotalCost();
   modal.classList.add('active');
   pageShadow.classList.add('active');
   document.body.classList.add('modal-open');
-  clearItem();
-  clearAdditions();
 }
 
 function closeModal() {
