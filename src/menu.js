@@ -28,8 +28,8 @@ const modalClose = document.querySelector('.menu-modal__close'),
   modalImg = document.querySelector('.menu-modal__img');
 
 let count = 0;
-let costWithoutAdd;
 let firstPrice;
+let mlCost;
 
 // function burger
 burger.addEventListener('click', function () {
@@ -56,24 +56,21 @@ modalItem.forEach(el => {
   });
 });
 
-function totalPrice(mlCost, ind) {
-  costWithoutAdd = (Number(products[ind].price) + Number(mlCost)).toFixed(2);
-  modalPrice.innerHTML = `$${costWithoutAdd}`;
-  return costWithoutAdd;
-}
-
 //function total cost
+
+function getTotalCost() {
+  modalPrice.innerHTML = `$${(Number(firstPrice) + ((Number(mlCost) || 0) + Number(count))).toFixed(2)}`;
+}
 
 menuItem.forEach((el, ind) => {
   el.addEventListener('click', () => {
     firstPrice = products[ind].price;
+    getTotalCost();
     openModal();
     modalImg.src = gridImg[ind].src;
     modalTitle.innerHTML = products[ind].name;
     modalText.innerHTML = products[ind].description;
-    modalPrice.innerHTML = `$${Number(firstPrice).toFixed(2)}`;
     modalItem.forEach((el, index) => {
-      let mlCost;
       el.addEventListener('click', function () {
         mlCost = 0;
         if (index === 0) {
@@ -85,14 +82,13 @@ menuItem.forEach((el, ind) => {
         if (index === 2) {
           mlCost = products[ind].sizes.l['add-price'];
         }
-        return totalPrice(mlCost, ind);
+        getTotalCost(Number(mlCost).toFixed(2));
       });
     });
   });
 });
 
 addItem.forEach(el => {
-  console.log(costWithoutAdd);
   count = 0;
   el.addEventListener('click', function () {
     if (el.checked && count < 1.5) {
@@ -101,8 +97,7 @@ addItem.forEach(el => {
     if (!el.checked && count > 0) {
       count -= 0.5;
     }
-    modalPrice.innerHTML = `$${((Number(costWithoutAdd) || Number(firstPrice)) + Number(count)).toFixed(2)}`;
-    return count;
+    getTotalCost();
   });
 });
 
@@ -126,7 +121,6 @@ function clearAdditions() {
     el.checked = false;
   });
   count = 0;
-  costWithoutAdd = 0;
 }
 
 //function open modal
@@ -134,7 +128,6 @@ function openModal() {
   modal.classList.add('active');
   pageShadow.classList.add('active');
   document.body.classList.add('modal-open');
-
   clearItem();
   clearAdditions();
 }
